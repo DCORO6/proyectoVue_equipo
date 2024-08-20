@@ -8,19 +8,6 @@ const changeColor = () => {
 }
 
 const selectedColor1 = ref('')
-const selectedColor2 = ref('')
-const favoriteColor = ref('')
-const determineFavoriteColor = () => {
-  if (selectedColor1.value === 'Leon' || selectedColor2.value === 'Amarillo') {
-    favoriteColor.value = 'Rojo'
-  } else if (selectedColor1.value === 'Agula' || selectedColor2.value === 'Naranja') {
-    favoriteColor.value = 'Verde'
-  } else if (selectedColor1.value === 'Cocodrilo' || selectedColor2.value === 'Rosa') {
-    favoriteColor.value = 'Azul'
-  } else {
-    favoriteColor.value = 'Responde a las preguntas'
-  }
-}
 </script>
 
 <template>
@@ -35,43 +22,31 @@ const determineFavoriteColor = () => {
       </div>
 
       <div class="question">
-        <p>¿Cuál es tu animal favorito?</p>
-        <label>
-          <input type="radio" value="Leon" v-model="selectedColor1" />
-          León
+        <p>¿Cuál es tu color favorito?</p>
+        <label style="color: blue">
+          <input type="radio" value="Azul" v-model="selectedColor1" />
+          Azul
         </label>
-        <label>
-          <input type="radio" value="Aguila" v-model="selectedColor1" />
-          Águila
+        <label style="color: green">
+          <input type="radio" value="Verde" v-model="selectedColor1" />
+          Verde
         </label>
-        <label>
-          <input type="radio" value="Cocodrilo" v-model="selectedColor1" />
-          Cocodrilo
-        </label>
-      </div>
-
-      <div class="question">
-        <p>¿Cuál es tu color secundario favorito?</p>
-        <label>
-          <input type="radio" value="Amarillo" v-model="selectedColor2" />
+        <label style="color: yellow">
+          <input type="radio" value="Amarillo" v-model="selectedColor1" />
           Amarillo
         </label>
-        <label>
-          <input type="radio" value="Naranja" v-model="selectedColor2" />
+        <label style="color: red">
+          <input type="radio" value="Rojo" v-model="selectedColor1" />
+          Rojo
+        </label>
+        <label style="color: blueviolet">
+          <input type="radio" value="Morado" v-model="selectedColor1" />
+          Morado
+        </label>
+        <label style="color: orange">
+          <input type="radio" value="Naranja" v-model="selectedColor1" />
           Naranja
         </label>
-        <label>
-          <input type="radio" value="Rosa" v-model="selectedColor2" />
-          Rosa
-        </label>
-      </div>
-
-      <button @click="determineFavoriteColor">¿Cuál es mi color favorito?</button>
-
-      <div v-if="favoriteColor">
-        <p>
-          Tu color favorito es: <strong>{{ favoriteColor }}</strong>
-        </p>
       </div>
     </header>
   </div>
